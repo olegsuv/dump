@@ -1,8 +1,14 @@
 /**
  * Created by Олег on 03.11.2014.
  */
-var olegsuv = {};
+
+//main object in global vision
+var olegsuv = olegsuv || {};
+
+//dump array
 olegsuv.s = [];
+
+//push new item (obejct, comment)
 olegsuv.v = function(obj, c) {
 	var comment = '';
 
@@ -28,9 +34,9 @@ olegsuv.v = function(obj, c) {
 
 	olegsuv.s.push(obj);
 	console.log('Saved in: '+parseInt(olegsuv.s.length-1)+comment,obj);
-	//return obj;
 };
 
+//get list of inner keys in object, usage: alert(olegsuv.o(obj))
 olegsuv.o = function(obj, c){
 	var s = "";
 	for (prop in obj) {
@@ -38,19 +44,21 @@ olegsuv.o = function(obj, c){
 			s += prop + ": '" + obj[prop] + "',\n";
 		}
 	}
-	//console.log(s);
 	return s;
 };
 
+//compare, return bool value
 olegsuv.c = function(i1, i2){
 	if(i1 && i2) return (olegsuv.s[i1] == olegsuv.s[i2]);
 	else return (olegsuv.s[0] == olegsuv.s[1]);
 };
 
+//get dump length
 olegsuv.l = function(){
 	return olegsuv.s[olegsuv.s.length-1];
 };
 
+//clear cookie
 olegsuv.ck = function() {
 	var cookies = document.cookie.split(";");
 
