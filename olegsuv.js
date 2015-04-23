@@ -3,7 +3,7 @@
  */
 
 //main object in global vision
-var olegsuv = olegsuv || {};
+window.olegsuv = olegsuv || {};
 
 //dump array
 olegsuv.s = [];
